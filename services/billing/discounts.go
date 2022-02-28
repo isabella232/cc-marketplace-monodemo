@@ -21,5 +21,5 @@ func FindDiscount(userID string) int {
 		}
 	}
 
-	return 0
+	return -1
 }
