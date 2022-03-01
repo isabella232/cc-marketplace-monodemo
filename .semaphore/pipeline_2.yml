@@ -13,7 +13,7 @@ blocks:
             - echo "Deploying UI service To Devel"
     dependencies: []
     run:
-      when: result = 'passed' and branch = 'master' and change_in('/ui')
+      when: 'result = ''passed'' and branch = ''master'' and change_in(''/services/ui'', {exclude: ''/services/ui/**/*.md''})'
   - name: User Service To Devel
     dependencies: []
     task:
@@ -22,7 +22,7 @@ blocks:
           commands:
             - echo "Deploying user service To Devel"
     run:
-      when: result = 'passed' and branch = 'master' and change_in('/users')
+      when: 'result = ''passed'' and branch = ''master'' and change_in(''/services/users'', {exclude: ''/services/ui/**/*.md''})'
   - name: Billing Service To Devel
     dependencies: []
     task:
@@ -31,4 +31,4 @@ blocks:
           commands:
             - echo "Deploying billing service To Devel"
     run:
-      when: result = 'passed' and branch = 'master' and change_in('/billing')
+      when: 'result = ''passed'' and branch = ''master'' and change_in(''/services/billing'', {exclude: ''/services/ui/**/*.md''})'
