@@ -1,0 +1,26 @@
+version: v1.0
+name: Pipeline 2
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: UI Service To Devel
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - echo "job 1"
+    dependencies: []
+  - name: User Service To Devel
+    dependencies: []
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
+  - name: Billing Service To Devel
+    dependencies: []
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
