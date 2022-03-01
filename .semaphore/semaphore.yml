@@ -70,11 +70,6 @@ blocks:
         - name: Test
           commands:
             - go test ./...
-after_pipeline:
-  task:
-    jobs:
-      - name: 'Job #1'
-        commands: []
 promotions:
   - name: Promotion to devel
     pipeline_file: pipeline_2.yml
