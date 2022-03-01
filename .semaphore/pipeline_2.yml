@@ -10,17 +10,25 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
-            - echo "job 1"
+            - echo "Deploying UI service To Devel"
     dependencies: []
+    run:
+      when: 'result = ''passed'' and branch = ''master'' and change_in(''/ui''})'
   - name: User Service To Devel
     dependencies: []
     task:
       jobs:
         - name: 'Job #1'
-          commands: []
+          commands:
+            - echo "Deploying user service To Devel"
+    run:
+      when: 'result = ''passed'' and branch = ''master'' and change_in(''/users''})'
   - name: Billing Service To Devel
     dependencies: []
     task:
       jobs:
         - name: 'Job #1'
-          commands: []
+          commands:
+            - echo "Deploying billing service To Devel"
+    run:
+      when: 'result = ''passed'' and branch = ''master'' and change_in(''/billing''})'
